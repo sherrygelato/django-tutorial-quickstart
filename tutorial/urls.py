@@ -17,6 +17,10 @@ from django.urls import include, path
 from rest_framework import routers
 from tutorial.quickstart import views
 
+# viewsets를 사용하기 때문에 router 클래스에 viewsets를 등록하면 
+# api에 대한 url conf를 자동으로 생성할 수 있다.
+# 즉, api url에 대한 더 많은 제어가 필요한 경우라면,
+# regular class-based views 사용과 동시에 url conf를 명시적으로 작성한다.
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)

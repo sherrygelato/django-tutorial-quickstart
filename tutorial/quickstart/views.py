@@ -1,8 +1,9 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import viewsets 
 from rest_framework import permissions
 from tutorial.quickstart.serializers import UserSerializer, GroupSerializer
 
+# viewsets : 모든 일반적인 동작을 클래스로 그룹화하여 간결화
 
 class UserViewSet(viewsets.ModelViewSet):
     """
