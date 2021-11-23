@@ -28,6 +28,7 @@ router.register(r'groups', views.GroupViewSet)
 # 자동 URL 라우팅을 사용하여 API를 연결한다.
 # 또한 검색 가능한 API에 대한 로그인 URL을 포함한다.
 urlpatterns = [
-    path('', include(router.urls)),
+    # path('', include(router.urls)),
+    path('', include('snippets.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
