@@ -34,6 +34,10 @@ class SnippetSerializer(serializers.Serializer):
         instance.save()
         return instance
 
-    class Meta:
-        model = Snippet
-        fields = ['id', 'title', 'code', 'linenos', 'language', 'style']
+# ModelSerializer : 단순히 직렬 변환기를 리팩토링하는 방법
+# 자동으로 결정된 필드 집합이며, create(), update() 메서드에 대한 기본 구현이다
+# 직렬 변환기의 좋은 속성 중 하나는 해당 코드를 print하여 모든 필드 검사 가능
+# class SnippetSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Snippet
+#         fields = ['id', 'title', 'code', 'linenos', 'language', 'style']
